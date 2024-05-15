@@ -1,12 +1,12 @@
 import { BaseSchema } from '@adonisjs/lucid/schema'
 
 export default class extends BaseSchema {
-  protected tableName = 'cargos'
+  protected tableName = 'tipo_pagamentos'
 
   async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('id_cargo').notNullable()
-      table.string('nome', 100).notNullable
+      table.increments('id').notNullable()
+      table.string('forma', 100).notNullable()
 
       table.timestamp('created_at')
       table.timestamp('updated_at')

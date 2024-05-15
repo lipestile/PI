@@ -5,8 +5,8 @@ export default class extends BaseSchema {
 
   async up() {
     this.schema.createTable(this.tableName, (table) => {
-      table.increments('idveiculo').notNullable()
-      table.integer('fabricante_idfabricante').unsigned().references('idfabricante').inTable('veiculos').notNullable()
+      table.increments('id').notNullable()
+      table.integer('fabricante_idfabricante').unsigned().references('id').inTable('fabricantes').notNullable()
       table.integer('chassi', 100).notNullable()
       table.date('ano_fabricacao').notNullable()
       table.string('marca', 45).notNullable()
