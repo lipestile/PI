@@ -52,9 +52,6 @@ export default class Venda extends BaseModel {
   declare cliente: BelongsTo<typeof Cliente>
 
 
-  @belongsTo(() => Funcionario)
-  declare funcionario: BelongsTo<typeof Funcionario>
-
   @belongsTo(() => Concessionaria)
   declare concessionaria: BelongsTo<typeof Concessionaria>
 
