@@ -1,5 +1,11 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@adonisjs/lucid/orm'
+import { BaseModel, column, belongsTo } from '@adonisjs/lucid/orm'
+import Funcionario from './funcionario.js'
+import Cliente from './cliente.js'
+import Concessionaria from './concessionaria.js'
+import Transportador from './transportador.js'
+import Veiculo from './veiculo.js'
+import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 
 export default class Venda extends BaseModel {
   @column({ isPrimary: true })
@@ -37,4 +43,25 @@ export default class Venda extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime
+
+
+  @belongsTo(() => Funcionario)
+  declare funcionario: BelongsTo<typeof Funcionario>
+
+  @belongsTo(() => Cliente)
+  declare cliente: BelongsTo<typeof Cliente>
+
+
+  @belongsTo(() => Funcionario)
+  declare funcionario: BelongsTo<typeof Funcionario>
+
+  @belongsTo(() => Concessionaria)
+  declare concessionaria: BelongsTo<typeof Concessionaria>
+
+  @belongsTo(() => Transportador)
+  declare transportador: BelongsTo<typeof Transportador>
+
+  @belongsTo(() => Veiculo)
+  declare veiculo: BelongsTo<typeof Veiculo>
+
 }

@@ -17,5 +17,5 @@ export default class Cargo extends BaseModel {
   declare updatedAt: DateTime
 
   @hasMany(() => Funcionario)
-  declare funcionarios: HasMany<typeof Funcionario>
+  declare funcionarios: HasMany<typeof Funcionario> 
 }

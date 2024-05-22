@@ -18,7 +18,7 @@ export default class Fabricante extends BaseModel {
   declare createdAt: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
-  declare updatedAt: DateTime
+  declare updatedAt: DateTime 
 
   @hasMany(() => Veiculo)
   declare funcionarios: HasMany<typeof Veiculo>
